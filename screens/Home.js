@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
-import { View, Text, Button } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 
 //COMPONENTS
 
@@ -11,8 +11,9 @@ export default function Home({ navigation }){
     return(
         <View>
             <Text>Home</Text>
-            <Text>{context.test}</Text>
-            <Button title="changes state" onPress={() => context.setTest("test")}/>
+            <ScrollView>
+
+            </ScrollView>
         </View>
     )
 }

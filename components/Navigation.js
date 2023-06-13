@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { useNavigation } from "@react-navigation/native"
 import { View, Button, StyleSheet } from "react-native"
+import { AppContext } from "../context/AppContext";
 
 export default function Navigation(){
 
+    const { loggedIn, setLoggedIn } = useContext(AppContext);
     const navigation = useNavigation();
     
     return (
@@ -11,6 +14,7 @@ export default function Navigation(){
             <Button title="About" onPress={() => navigation.navigate("About")}/>
             <Button title="Contact" onPress={() => navigation.navigate("Contact")}/>
             <Button title="Profile" onPress={() => navigation.navigate("Profile")}/>
+            <Button title={loggedIn ? "sign out" : "sign in"} onPress={() => setLoggedIn(!loggedIn)}/>
         </View>
     )
 }
